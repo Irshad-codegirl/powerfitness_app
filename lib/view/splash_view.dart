@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/app_routes.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 import 'package:powerfitness/resource/app_images.dart';
+import 'package:powerfitness/view/onboardingA1_view.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,7 +23,11 @@ class _SplashScreenState extends State<SplashScreen> {
     _timer = Timer(const Duration(seconds: 2), () {
       if (mounted) {
         // Use offAllNamed to clear the splash from the navigation stack
-        Get.offAllNamed(AppRoutes.onboardingA1);
+         Get.to(
+                () => const OnBoardingScreen(),
+                transition: Transition.rightToLeft,
+                duration: const Duration(milliseconds: 300),
+              );
       }
     });
   }

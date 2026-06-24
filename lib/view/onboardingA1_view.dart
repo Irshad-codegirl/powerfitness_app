@@ -5,13 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/app_routes.dart';
 import 'package:powerfitness/resource/app_colors.dart';
-import 'package:powerfitness/widget/bg_w.dart';
-import 'package:powerfitness/widget/onBoardingSlide_w.dart';
+import 'package:powerfitness/view/auth/login_view.dart';
+import 'package:powerfitness/widgets/bg_w.dart';
+import 'package:powerfitness/widgets/onBoardingSlide_w.dart';
 
 import '../../resource/app_images.dart';
-
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -53,7 +52,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   void _onGetStarted() {
-    Get.offAllNamed(AppRoutes.login);
+    Get.to(
+      () => const LoginScreen(),
+      transition: Transition.rightToLeft,
+      duration: const Duration(milliseconds: 300),
+    );
   }
 
   @override
@@ -78,10 +81,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           physics: const BouncingScrollPhysics(),
           onPageChanged: (index) => setState(() => _currentPage = index),
           children: [
-            // ── Page A 
+            // ── Page A
             _buildPageA(),
 
-            // ── Page B 
+            // ── Page B
             OnboardingSlideWidget(
               backgroundImage: AppImages.onboardingBgC,
               iconAsset: AppImages.iconActiveLifestyle,
@@ -93,7 +96,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               totalPages: _slideTotalDots,
             ),
 
-            // ── Page C 
+            // ── Page C
             OnboardingSlideWidget(
               backgroundImage: AppImages.onboardingBgB,
               iconAsset: AppImages.iconNutrition,
@@ -105,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               totalPages: _slideTotalDots,
             ),
 
-            // ── Page D 
+            // ── Page D
             OnboardingSlideWidget(
               backgroundImage: AppImages.onboardingBgD,
               iconAsset: AppImages.iconCommunity,
@@ -122,7 +125,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  // ── Page A: Welcome splash 
+  // ── Page A: Welcome splash
 
   Widget _buildPageA() {
     return AppBackgroundWidget(
@@ -139,11 +142,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-             
-            
                 // "Welcome to"
                 Text(
                   'Welcome to',
@@ -155,7 +156,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                 ),
                 SizedBox(height: 10.h),
-            
+
                 // App logo
                 Image.asset(
                   AppImages.pflogo,
@@ -185,7 +186,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ],
                   ),
                 ),
-               
+
                 Text(
                   'Agility! Ability! Mentality!',
                   style: GoogleFonts.poppins(
@@ -195,9 +196,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     letterSpacing: 1,
                   ),
                 ),
-            
-             
-            
               ],
             ),
           ),
