@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AuthLabel extends StatelessWidget {
   final String text;
@@ -20,10 +19,11 @@ class AuthLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.poppins(
+      style: TextStyle(
         color: color ?? Colors.black87,
         fontSize: fontSize ?? 12.sp,
         fontWeight: fontWeight ?? FontWeight.w600,
+        fontFamily: 'Poppins',
       ),
     );
   }
@@ -48,10 +48,11 @@ class AuthSubtitle extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign ?? TextAlign.center,
-      style: GoogleFonts.poppins(
+      style: TextStyle(
         color: color ?? Colors.white70,
         fontSize: fontSize ?? 11.sp,
         height: 1.4,
+        fontFamily: 'Poppins',
       ),
     );
   }
@@ -68,9 +69,10 @@ class AuthHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.poppins(
+      style: TextStyle(
         color: color ?? Colors.white,
         fontSize: fontSize ?? 24.sp,
+           fontFamily: 'Poppins',
         fontWeight: FontWeight.w700,
       ),
     );

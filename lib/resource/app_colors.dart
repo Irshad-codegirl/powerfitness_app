@@ -3,34 +3,15 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const black1 = Color(0xFF232323);
 
-
   static const Color yellow = Color(0xFFE9EE6A);
   static const Color light = Color(0xFFFFFFFF);
 
   static const Color purple = Color(0xFF896CFE);
   static const Color lightpurple = Color(0xFFB3A0FF);
 
-  static const Color btnbg =  Color(0xFF3C3C3C);
-  static const Color blue2 = Color(0xFF003D72);
-    static const Color blue3 = Color(0xFF121D3A);
-  
+  static const Color btnbg = Color(0xFF3C3C3C);
+
   static const Color hintcolor = Color(0xFF181818);
-  static const Color lightBlue = Color(0xFF99CAFF);
-  static const Color grey6 = Color(0xFF7C7C7C);
-  static const Color grey8 = Color(0xFFE1E1E1);
-  static const Color darkyellow = Color(0xFFFED03C);
- 
-  static const Color green = Color(0xFF28A745);
-  static const Color lightgreen = Color(0xFFAADCB5);
-  static const Color darkgreen = Color(0xFF098E32);
-
-  static const Color grey7 = Color(0xFF373737);
-
-  static const Color bgstock = Color(0xFFD6D6D6);
-  static const Color stocktext = Color(0xFF555555);
-  static const Color grey9 = Color(0xFF8B8B8B);
-
-
 
   static const Color redbuttonborder = Color(0xFFFFD6D6);
   static const Color tagOrange = Color(0xFFEF8C1F);

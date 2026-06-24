@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AuthInputField extends StatelessWidget {
   final String hintText;
@@ -21,10 +20,20 @@ class AuthInputField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscureText,
-      style: GoogleFonts.poppins(color: Colors.black, fontSize: 14.sp,fontWeight: FontWeight.w400),
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 14.sp,
+           fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+      ),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: GoogleFonts.poppins(color: Colors.black, fontSize: 14.sp,fontWeight: FontWeight.w400),
+        hintStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 14.sp,
+             fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400,
+        ),
         filled: true,
         fillColor: Colors.white,
         contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),

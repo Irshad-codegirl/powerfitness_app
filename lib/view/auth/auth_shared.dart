@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 import 'package:powerfitness/resource/app_icons.dart';
 
@@ -58,9 +57,10 @@ class AuthHeader extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
+            style: TextStyle(
               color: AppColors.yellow,
               fontSize: 20.sp,
+                 fontFamily: 'Poppins',
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -158,9 +158,10 @@ class LabelText extends StatelessWidget {
     return Text(
       textAlign: TextAlign.left,
       text,
-      style: GoogleFonts.poppins(
+      style: TextStyle(
         color: Colors.black87,
         fontSize: 12.sp,
+        fontFamily: 'Poppins',
         fontWeight: FontWeight.w600,
       ),
     );
@@ -178,7 +179,11 @@ class MutedCenterText extends StatelessWidget {
     return Center(
       child: Text(
         text,
-        style: GoogleFonts.poppins(color: Colors.white70, fontSize: 11.sp),
+        style: TextStyle(
+          color: Colors.white70,
+          fontSize: 11.sp,
+          fontFamily: 'Poppins',
+        ),
       ),
     );
   }

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 
-/// Reusable bottom card shown on onboarding slides B, C, D.
-/// Contains icon, title, page indicators, and a primary button.
 class OnboardingSlideWidget extends StatelessWidget {
   final String backgroundImage;
   final String iconAsset;
@@ -84,11 +81,12 @@ class OnboardingSlideWidget extends StatelessWidget {
                       Text(
                         title,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                           height: 1.35,
+                          fontFamily: 'Poppins',
                         ),
                       ),
                       SizedBox(height: 16.h),
@@ -117,10 +115,11 @@ class OnboardingSlideWidget extends StatelessWidget {
                 children: [
                   Text(
                     'Skip',
-                    style: GoogleFonts.leagueSpartan(
+                    style: TextStyle(
                       color: AppColors.yellow,
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w500,
+                      fontFamily: 'LeagueSpartan',
                     ),
                   ),
                   Icon(Icons.play_arrow, color: AppColors.yellow),
@@ -185,11 +184,12 @@ class _OnboardingButton extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           label,
-          style: GoogleFonts.poppins(
+          style: TextStyle(
             color: Colors.white,
             fontSize: 18.sp,
             fontWeight: FontWeight.w700,
             letterSpacing: 0,
+            fontFamily: 'Poppins',
           ),
         ),
       ),
