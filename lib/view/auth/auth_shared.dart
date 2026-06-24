@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:powerfitness/resource/app_colors.dart';
-
-export '../../widgets/index.dart';
+import 'package:powerfitness/resource/app_icons.dart';
 
 // ============ 1. System UI Style Widget (Reusable across all screens) ============
 class AppSystemUIStyle extends StatelessWidget {
   final Widget child;
 
-  const AppSystemUIStyle({
-    super.key,
-    required this.child,
-  });
+  const AppSystemUIStyle({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -100,10 +97,7 @@ class AuthPageScaffold extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              AuthHeader(
-                title: title,
-                onBack: onBack,
-              ),
+              AuthHeader(title: title, onBack: onBack),
               SizedBox(height: contentPadding.h),
               Expanded(
                 child: enableScroll
@@ -140,11 +134,14 @@ class _BackChevron extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Image(
-        image: const AssetImage('assets/images/Arrow.png'),
-        width: 16.sp,
-        height: 16.sp,
-        color: AppColors.yellow,
+      child: SvgPicture.asset(
+        AppIcons.arrow, // Aap ke icon ka sahi naam aur path
+        width: 16.w, // Icon ki width
+        height: 16.w, // Icon ki height
+        colorFilter: const ColorFilter.mode(
+          AppColors.yellow, // Jo rang aap dena chahte hain
+          BlendMode.srcIn, // Yeh filter color ko SVG par apply kr deta hai
+        ),
       ),
     );
   }

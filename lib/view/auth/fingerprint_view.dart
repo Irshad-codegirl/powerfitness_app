@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:powerfitness/resource/appFonts.dart';
+import 'package:powerfitness/resource/appString.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 import 'package:powerfitness/resource/app_images.dart';
 import 'package:powerfitness/view/auth/auth_shared.dart';
@@ -12,20 +13,19 @@ class FingerprintScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthPageScaffold(
-      title: 'Set Your Fingerprint',
+      title: AppStrings.fingerprintTitle,
       contentPadding: 60,
       horizontalPadding: 0,
       content: Column(
         children: [
           Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed, sed do eiusmod incididunt ut labore et\ndolore.',
+            AppStrings.fingerprintDesc,
             textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
+            style: AppFonts.poppinsStyle(
               color: Colors.white70,
               fontSize: 12.sp,
               fontWeight: FontWeight.w300,
               height: 1.35,
-              letterSpacing:0,
             ),
           ),
           SizedBox(height: 40.h),
@@ -42,9 +42,17 @@ class FingerprintScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 40.h),
-          AuthPrimaryButton(label: 'Skip', onTap: () {}, width: 120.w),
+          AuthPrimaryButton(
+            label: AppStrings.btnSkip,
+            onTap: () {},
+            width: 120.w,
+          ),
           SizedBox(height: 14.h),
-          AuthPrimaryButton(label: 'Continue', onTap: () {}, width: 120.w),
+          AuthPrimaryButton(
+            label: AppStrings.btnContinue,
+            onTap: () {},
+            width: 120.w,
+          ),
         ],
       ),
     );

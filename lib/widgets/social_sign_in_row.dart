@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:powerfitness/resource/app_icons.dart';
 
 class SocialSignInRow extends StatelessWidget {
   final List<String>? imagePaths; // String paths instead of IconData
@@ -21,17 +23,17 @@ class SocialSignInRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _SocialCircle(
-          imagePath: 'assets/images/Gmail.png',
+          imagePath: AppIcons.gmail,
           onTap: onGoogleTap,
         ),
         SizedBox(width: 16.w),
         _SocialCircle(
-          imagePath: 'assets/images/Facebook.png',
+          imagePath: AppIcons.fb,
           onTap: onFacebookTap,
         ),
         SizedBox(width: 16.w),
         _SocialCircle(
-          imagePath: 'assets/images/Mark.png',
+          imagePath: AppIcons.mark,
           onTap: onFingerprintTap,
         ),
       ],
@@ -64,7 +66,7 @@ class _SocialCircle extends StatelessWidget {
           ],
         ),
         alignment: Alignment.center,
-        child: Image.asset(
+        child: SvgPicture.asset(
           imagePath,
           width: 24.sp,
           height: 24.sp,

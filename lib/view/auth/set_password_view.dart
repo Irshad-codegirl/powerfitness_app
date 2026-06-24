@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:powerfitness/resource/appFonts.dart';
+import 'package:powerfitness/resource/appString.dart';
 import 'package:powerfitness/resource/app_colors.dart';
+
 import 'package:powerfitness/view/auth/auth_shared.dart';
 import 'package:powerfitness/view/auth/fingerprint_view.dart';
 import 'package:powerfitness/widgets/auth_input_field.dart';
@@ -14,20 +16,19 @@ class SetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthPageScaffold(
-      title: 'Set Password',
+      title: AppStrings.setPasswordTitle,
       contentPadding: 50,
       horizontalPadding: 0,
       content: Column(
         children: [
           Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua.',
+            AppStrings.setPasswordDesc,
             textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
+            style: AppFonts.poppinsStyle(
               color: Colors.white70,
               fontSize: 12.sp,
               fontWeight: FontWeight.w300,
               height: 1.35,
-              letterSpacing: 0,
             ),
           ),
           SizedBox(height: 40.h),
@@ -36,19 +37,18 @@ class SetPasswordScreen extends StatelessWidget {
             decoration: const BoxDecoration(color: AppColors.lightpurple),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const LabelText('Password'),
+                LabelText(AppStrings.labelPassword),
                 SizedBox(height: 8.h),
-                const AuthInputField(
-                  hintText: '****************',
+                AuthInputField(
+                  hintText: AppStrings.hintPassword,
                   obscureText: true,
                 ),
                 SizedBox(height: 12.h),
-                const LabelText('Confirm Password'),
+                LabelText(AppStrings.labelConfirmPassword),
                 SizedBox(height: 8.h),
-                const AuthInputField(
-                  hintText: '****************',
+                AuthInputField(
+                  hintText: AppStrings.hintPassword,
                   obscureText: true,
                 ),
               ],
@@ -57,7 +57,7 @@ class SetPasswordScreen extends StatelessWidget {
           SizedBox(height: 40.h),
           Center(
             child: AuthPrimaryButton(
-              label: 'Reset Password',
+              label: AppStrings.btnResetPassword,
               onTap: () => Get.to(
                 () => const FingerprintScreen(),
                 transition: Transition.rightToLeft,

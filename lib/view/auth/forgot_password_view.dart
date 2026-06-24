@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:powerfitness/resource/appFonts.dart';
+import 'package:powerfitness/resource/appString.dart';
 import 'package:powerfitness/resource/app_colors.dart';
+
+
 import 'package:powerfitness/view/auth/auth_shared.dart';
 import 'package:powerfitness/view/auth/set_password_view.dart';
 import 'package:powerfitness/widgets/auth_input_field.dart';
@@ -14,16 +17,15 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthPageScaffold(
-      title: 'Forgotten Password',
+      title: AppStrings.forgotPasswordTitle,
       contentPadding: 60,
       horizontalPadding: 0,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Forgot Password?',
-            style: GoogleFonts.poppins(
-              color: Colors.white,
+            AppStrings.forgotPasswordHeader,
+            style: AppFonts.poppinsStyle(
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
             ),
@@ -32,14 +34,13 @@ class ForgotPasswordScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 34.w),
             child: Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua.',
+              AppStrings.forgotPasswordDesc,
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: AppFonts.poppinsStyle(
                 color: Colors.white70,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w300,
                 height: 1.35,
-                letterSpacing: 0,
               ),
             ),
           ),
@@ -49,18 +50,17 @@ class ForgotPasswordScreen extends StatelessWidget {
             decoration: const BoxDecoration(color: AppColors.lightpurple),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const LabelText('Enter your email address'),
+                LabelText(AppStrings.labelEnterEmail),
                 SizedBox(height: 8.h),
-                const AuthInputField(hintText: 'example@example.com'),
+                AuthInputField(hintText: AppStrings.hintEmail),
               ],
             ),
           ),
           SizedBox(height: 40.h),
           Center(
             child: AuthPrimaryButton(
-              label: 'Continue',
+              label: AppStrings.btnContinue,
               onTap: () => Get.to(
                 () => const SetPasswordScreen(),
                 transition: Transition.rightToLeft,
