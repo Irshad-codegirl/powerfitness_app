@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/resource/appFonts.dart';
-import 'package:powerfitness/resource/appString.dart';
+import 'package:powerfitness/controller/auth_controller.dart';
+import 'package:powerfitness/resource/app_fonts.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 
 import 'package:powerfitness/view/auth/auth_shared.dart';
-import 'package:powerfitness/view/auth/forgot_password_view.dart';
-import 'package:powerfitness/view/auth/signup_view.dart';
-import 'package:powerfitness/view/onboardingA1_view.dart';
-import 'package:powerfitness/widgets/auth_input_field.dart';
-import 'package:powerfitness/widgets/auth_primary_button.dart';
-import 'package:powerfitness/widgets/social_sign_in_row.dart';
+import 'package:powerfitness/view/widgets/auth_input_field.dart';
+import 'package:powerfitness/view/widgets/auth_primary_button.dart';
+import 'package:powerfitness/view/widgets/social_sign_in_row.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetView<AuthController> {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AuthPageScaffold(
       title: AppStrings.loginTitle,
-      onBack: () => Get.to(
-        () => const OnBoardingScreen(),
-        transition: Transition.rightToLeft,
-        duration: const Duration(milliseconds: 300),
-      ),
+      onBack: controller.goToOnboarding,
       contentPadding: 50,
       horizontalPadding: 0,
       content: Column(
@@ -71,11 +65,7 @@ class LoginScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
-                    onTap: () => Get.to(
-                      () => const ForgotPasswordScreen(),
-                      transition: Transition.rightToLeft,
-                      duration: const Duration(milliseconds: 300),
-                    ),
+                    onTap: controller.goToForgotPassword,
                     child: Text(
                       AppStrings.forgotPassword,
                       style: AppFonts.poppinsStyle(
@@ -105,11 +95,7 @@ class LoginScreen extends StatelessWidget {
           SizedBox(height: 30.h),
           Center(
             child: GestureDetector(
-              onTap: () => Get.to(
-                () => const SignupScreen(),
-                transition: Transition.rightToLeft,
-                duration: const Duration(milliseconds: 300),
-              ),
+              onTap: controller.goToSignup,
               child: RichText(
                 text: TextSpan(
                   style: AppFonts.poppinsStyle(fontSize: 11.sp),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/resource/appFonts.dart';
-import 'package:powerfitness/resource/appString.dart';
+import 'package:powerfitness/controller/auth_controller.dart';
+import 'package:powerfitness/resource/app_fonts.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 
 import 'package:powerfitness/view/auth/auth_shared.dart';
-import 'package:powerfitness/view/auth/login_view.dart';
-import 'package:powerfitness/widgets/auth_input_field.dart';
-import 'package:powerfitness/widgets/auth_primary_button.dart';
-import 'package:powerfitness/widgets/social_sign_in_row.dart';
+import 'package:powerfitness/view/widgets/auth_input_field.dart';
+import 'package:powerfitness/view/widgets/auth_primary_button.dart';
+import 'package:powerfitness/view/widgets/social_sign_in_row.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends GetView<AuthController> {
   const SignupScreen({super.key});
 
   @override
@@ -103,11 +103,7 @@ class SignupScreen extends StatelessWidget {
           SizedBox(height: 18.h),
           Center(
             child: GestureDetector(
-              onTap: () => Get.to(
-                () => const LoginScreen(),
-                transition: Transition.rightToLeft,
-                duration: const Duration(milliseconds: 300),
-              ),
+              onTap: controller.goToLogin,
               child: RichText(
                 text: TextSpan(
                   style: AppFonts.poppinsStyle(fontSize: 11.sp),

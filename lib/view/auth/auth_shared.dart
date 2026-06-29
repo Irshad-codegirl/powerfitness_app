@@ -60,7 +60,7 @@ class AuthHeader extends StatelessWidget {
             style: TextStyle(
               color: AppColors.yellow,
               fontSize: 20.sp,
-                 fontFamily: 'Poppins',
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -151,7 +151,7 @@ class _BackChevron extends StatelessWidget {
 class LabelText extends StatelessWidget {
   final String text;
 
-  const LabelText(this.text);
+  const LabelText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +172,7 @@ class LabelText extends StatelessWidget {
 class MutedCenterText extends StatelessWidget {
   final String text;
 
-  const MutedCenterText(this.text);
+  const MutedCenterText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {

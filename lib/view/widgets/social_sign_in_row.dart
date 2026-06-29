@@ -22,20 +22,11 @@ class SocialSignInRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _SocialCircle(
-          imagePath: AppIcons.gmail,
-          onTap: onGoogleTap,
-        ),
+        _SocialCircle(imagePath: AppIcons.gmail, onTap: onGoogleTap),
         SizedBox(width: 16.w),
-        _SocialCircle(
-          imagePath: AppIcons.fb,
-          onTap: onFacebookTap,
-        ),
+        _SocialCircle(imagePath: AppIcons.fb, onTap: onFacebookTap),
         SizedBox(width: 16.w),
-        _SocialCircle(
-          imagePath: AppIcons.mark,
-          onTap: onFingerprintTap,
-        ),
+        _SocialCircle(imagePath: AppIcons.mark, onTap: onFingerprintTap),
       ],
     );
   }
@@ -51,28 +42,7 @@ class _SocialCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        width: 45.w,
-        height: 45.w,
-        decoration: BoxDecoration(
-          borderRadius:BorderRadius.circular(13.r),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        alignment: Alignment.center,
-        child: SvgPicture.asset(
-          imagePath,
-          width: 24.sp,
-          height: 24.sp,
-          // color: AppColors.lightpurple, 
-        ),
-      ),
+      child: SvgPicture.asset(imagePath, width: 35.w, height: 35.w),
     );
   }
 }

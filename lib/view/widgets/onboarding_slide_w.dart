@@ -50,7 +50,10 @@ class OnboardingSlideWidget extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.transparent, Colors.black.withOpacity(0.3)],
+                colors: [
+                  Colors.transparent,
+                  Colors.black.withValues(alpha: 0.3),
+                ],
               ),
             ),
           ),
@@ -177,7 +180,7 @@ class _OnboardingButton extends StatelessWidget {
         width: 160.w,
         height: 40.h,
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.45),
+          color: Colors.black.withValues(alpha: 0.45),
           borderRadius: BorderRadius.circular(50.r),
           border: Border.all(color: Colors.white54),
         ),

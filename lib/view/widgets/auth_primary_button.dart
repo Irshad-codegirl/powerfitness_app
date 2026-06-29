@@ -24,7 +24,7 @@ class AuthPrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Center(
         child: Container(
-          width:178.w,
+          width: 178.w,
           height: 44.h,
           decoration: BoxDecoration(
             color: backgroundColor ?? AppColors.btnbg,
@@ -32,7 +32,7 @@ class AuthPrimaryButton extends StatelessWidget {
             border: Border.all(color: Colors.white24),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.25),
+                color: Colors.black.withValues(alpha: 0.25),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -41,10 +41,10 @@ class AuthPrimaryButton extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             label,
-            style:TextStyle(
+            style: TextStyle(
               color: textColor ?? Colors.white,
               fontSize: 16.sp,
-                 fontFamily: 'Poppins',
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.w700,
             ),
           ),

@@ -1,45 +1,21 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:powerfitness/controller/splash_controller.dart';
+import 'package:powerfitness/resource/app_fonts.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
-import 'package:powerfitness/resource/app_images.dart';
-import 'package:powerfitness/view/onboardingA1_view.dart';
+import 'package:powerfitness/resource/app_icons.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends GetView<SplashController> {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  late final Timer _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _timer = Timer(const Duration(seconds: 2), () {
-      if (mounted) {
-        // Use offAllNamed to clear the splash from the navigation stack
-         Get.to(
-                () => const OnBoardingScreen(),
-                transition: Transition.rightToLeft,
-                duration: const Duration(milliseconds: 300),
-              );
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Get.find<SplashController>();
+
     return Scaffold(
       backgroundColor: AppColors.black1,
       body: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -50,11 +26,46 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
         child: SafeArea(
           child: Center(
-            child: Image.asset(
-              AppImages.logo,
-              width: 260,
-              height: 180,
-              fit: BoxFit.contain,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  AppIcons.logo,
+                  width: 169.w,
+                  height: 112.h,
+                  fit: BoxFit.contain,
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: AppFonts.rajdhaniStyle(
+                      color: AppColors.purple,
+                      fontSize: 25.sp,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    children: [
+                      TextSpan(text: '${AppStrings.appName} '),
+                      TextSpan(
+                        text: AppStrings.appNameSuffix,
+                        style: AppFonts.rajdhaniStyle(
+                          color: AppColors.yellow,
+                          fontSize: 25.sp,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                  AppStrings.appTagline,
+                  style: AppFonts.poppinsStyle(
+                    color: Colors.white70,
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ],
             ),
           ),
         ),

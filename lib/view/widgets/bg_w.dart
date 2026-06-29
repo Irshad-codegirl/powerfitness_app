@@ -43,7 +43,7 @@ class AppBackgroundWidget extends StatelessWidget {
           Image.asset(
             backgroundImage!,
             fit: BoxFit.contain,
-          alignment: Alignment.center,
+            alignment: Alignment.center,
           ),
 
         // Gradient overlay

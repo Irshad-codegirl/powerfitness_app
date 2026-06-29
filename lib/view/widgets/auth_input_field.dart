@@ -23,7 +23,7 @@ class AuthInputField extends StatelessWidget {
       style: TextStyle(
         color: Colors.black,
         fontSize: 14.sp,
-           fontFamily: 'Poppins',
+        fontFamily: 'Poppins',
         fontWeight: FontWeight.w400,
       ),
       decoration: InputDecoration(
@@ -31,7 +31,7 @@ class AuthInputField extends StatelessWidget {
         hintStyle: TextStyle(
           color: Colors.black,
           fontSize: 14.sp,
-             fontFamily: 'Poppins',
+          fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
         ),
         filled: true,
@@ -47,7 +47,7 @@ class AuthInputField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),
-          borderSide: BorderSide(color: Colors.white.withOpacity(0.8)),
+          borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.8)),
         ),
       ),
     );

@@ -72,7 +72,7 @@ class AuthHeading extends StatelessWidget {
       style: TextStyle(
         color: color ?? Colors.white,
         fontSize: fontSize ?? 24.sp,
-           fontFamily: 'Poppins',
+        fontFamily: 'Poppins',
         fontWeight: FontWeight.w700,
       ),
     );

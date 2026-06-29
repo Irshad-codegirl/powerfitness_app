@@ -43,4 +43,5 @@ class AppColors {
 
   static const keypad = Color(0xFFF8FAFC);
 }
+
 //7AB77A

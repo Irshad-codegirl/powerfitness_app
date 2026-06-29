@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:powerfitness/resource/appFonts.dart';
-import 'package:powerfitness/resource/appString.dart';
+import 'package:powerfitness/resource/app_fonts.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 import 'package:powerfitness/resource/app_images.dart';
 import 'package:powerfitness/view/auth/auth_shared.dart';
-import 'package:powerfitness/widgets/auth_primary_button.dart';
+import 'package:powerfitness/view/widgets/auth_primary_button.dart';
 
 class FingerprintScreen extends StatelessWidget {
   const FingerprintScreen({super.key});

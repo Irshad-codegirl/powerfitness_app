@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/resource/appFonts.dart';
-import 'package:powerfitness/resource/appString.dart';
+import 'package:powerfitness/controller/auth_controller.dart';
+import 'package:powerfitness/resource/app_fonts.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
 
 import 'package:powerfitness/view/auth/auth_shared.dart';
-import 'package:powerfitness/view/auth/fingerprint_view.dart';
-import 'package:powerfitness/widgets/auth_input_field.dart';
-import 'package:powerfitness/widgets/auth_primary_button.dart';
+import 'package:powerfitness/view/widgets/auth_input_field.dart';
+import 'package:powerfitness/view/widgets/auth_primary_button.dart';
 
-class SetPasswordScreen extends StatelessWidget {
+class SetPasswordScreen extends GetView<AuthController> {
   const SetPasswordScreen({super.key});
 
   @override
@@ -58,11 +58,7 @@ class SetPasswordScreen extends StatelessWidget {
           Center(
             child: AuthPrimaryButton(
               label: AppStrings.btnResetPassword,
-              onTap: () => Get.to(
-                () => const FingerprintScreen(),
-                transition: Transition.rightToLeft,
-                duration: const Duration(milliseconds: 300),
-              ),
+              onTap: controller.goToFingerprint,
               width: 160.w,
             ),
           ),
