@@ -53,12 +53,16 @@ class LoginScreen extends GetView<AuthController> {
               children: [
                 LabelText(AppStrings.labelUsernameOrEmail),
                 SizedBox(height: 8.h),
-                AuthInputField(hintText: AppStrings.hintEmail),
+                AuthInputField(
+                  hintText: AppStrings.hintEmail,
+                  controller: controller.loginEmailController,
+                ),
                 SizedBox(height: 14.h),
                 LabelText(AppStrings.labelPassword),
                 SizedBox(height: 8.h),
                 AuthInputField(
                   hintText: AppStrings.hintPassword,
+                  controller: controller.loginPasswordController,
                   obscureText: true,
                 ),
                 SizedBox(height: 8.h),
@@ -84,14 +88,14 @@ class LoginScreen extends GetView<AuthController> {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: AuthPrimaryButton(
               label: AppStrings.btnLogin,
-              onTap: () {},
+              onTap: controller.loginWithEmail,
               width: double.infinity,
             ),
           ),
           SizedBox(height: 20.h),
           MutedCenterText(AppStrings.orSignUpWith),
           SizedBox(height: 14.h),
-          const SocialSignInRow(),
+          SocialSignInRow(onGoogleTap: controller.signInWithGoogle),
           SizedBox(height: 30.h),
           Center(
             child: GestureDetector(

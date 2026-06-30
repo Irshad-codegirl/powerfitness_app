@@ -22,7 +22,7 @@ class SocialSignInRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _SocialCircle(imagePath: AppIcons.gmail, onTap: onGoogleTap),
+        _SocialCircle(imagePath: AppIcons.google, onTap: onGoogleTap),
         SizedBox(width: 16.w),
         _SocialCircle(imagePath: AppIcons.fb, onTap: onFacebookTap),
         SizedBox(width: 16.w),

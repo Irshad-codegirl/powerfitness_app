@@ -39,17 +39,24 @@ class SignupScreen extends GetView<AuthController> {
               children: [
                 LabelText(AppStrings.labelFullName),
                 SizedBox(height: 8.h),
-                AuthInputField(hintText: AppStrings.hintFullName),
+                AuthInputField(
+                  hintText: AppStrings.hintFullName,
+                  controller: controller.fullNameController,
+                ),
                 SizedBox(height: 12.h),
                 LabelText(AppStrings.labelEmailOrPhone),
                 SizedBox(height: 8.h),
-                AuthInputField(hintText: AppStrings.hintEmailOrPhone),
+                AuthInputField(
+                  hintText: AppStrings.hintEmailOrPhone,
+                  controller: controller.signupEmailController,
+                ),
                 SizedBox(height: 12.h),
                 LabelText(AppStrings.labelPassword),
                 SizedBox(height: 8.h),
                 AuthInputField(
                   hintText: AppStrings.hintPassword,
                   obscureText: true,
+                  controller: controller.signupPasswordController,
                 ),
                 SizedBox(height: 12.h),
                 LabelText(AppStrings.labelConfirmPassword),
@@ -57,6 +64,7 @@ class SignupScreen extends GetView<AuthController> {
                 AuthInputField(
                   hintText: AppStrings.hintPassword,
                   obscureText: true,
+                  controller: controller.confirmPasswordController,
                 ),
               ],
             ),
@@ -92,14 +100,14 @@ class SignupScreen extends GetView<AuthController> {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: AuthPrimaryButton(
               label: AppStrings.btnSignUp,
-              onTap: () {},
+              onTap: controller.signUpWithEmail,
               width: double.infinity,
             ),
           ),
           SizedBox(height: 16.h),
           MutedCenterText(AppStrings.orSignupWith),
           SizedBox(height: 14.h),
-          const SocialSignInRow(),
+          SocialSignInRow(onGoogleTap: controller.signInWithGoogle),
           SizedBox(height: 18.h),
           Center(
             child: GestureDetector(

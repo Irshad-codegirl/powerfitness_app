@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "152718907351",
+    "project_id": "login-with-email-1b857",
+    "storage_bucket": "login-with-email-1b857.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152718907351:android:f91c8e0e8fd1c91bdf9d92",
+        "android_client_info": {
+          "package_name": "com.example.powerfitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152718907351-qoq9ispkfi02lvgcbi26j9m3ht94ntdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.powerfitness",
+            "certificate_hash": "4371d1e81b995fc431be5adbba3756e4600c8186"
+          }
+        },
+        {
+          "client_id": "152718907351-vnr5r359pompm070cj4pna92m6nnscck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHHVq42MPnXQsYvtF3lSZsgB4-qEAfOyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152718907351-vnr5r359pompm070cj4pna92m6nnscck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

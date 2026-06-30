@@ -52,7 +52,7 @@ class ForgotPasswordScreen extends GetView<AuthController> {
               children: [
                 LabelText(AppStrings.labelEnterEmail),
                 SizedBox(height: 8.h),
-                AuthInputField(hintText: AppStrings.hintEmail),
+                AuthInputField(hintText: AppStrings.hintEmail,controller: controller.forgotEmailController,),
               ],
             ),
           ),
@@ -60,7 +60,7 @@ class ForgotPasswordScreen extends GetView<AuthController> {
           Center(
             child: AuthPrimaryButton(
               label: AppStrings.btnContinue,
-              onTap: controller.goToSetPassword,
+            onTap: controller.sendPasswordReset,
               width: 160.w,
             ),
           ),
