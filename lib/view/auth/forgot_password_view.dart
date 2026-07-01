@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/controller/auth_controller.dart';
+import 'package:powerfitness/controllers/auth_controller.dart';
 import 'package:powerfitness/resource/app_fonts.dart';
 import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/resource/app_colors.dart';
@@ -52,7 +52,10 @@ class ForgotPasswordScreen extends GetView<AuthController> {
               children: [
                 LabelText(AppStrings.labelEnterEmail),
                 SizedBox(height: 8.h),
-                AuthInputField(hintText: AppStrings.hintEmail,controller: controller.forgotEmailController,),
+                AuthInputField(
+                  hintText: AppStrings.hintEmail,
+                  controller: controller.forgotEmailController,
+                ),
               ],
             ),
           ),
@@ -60,7 +63,7 @@ class ForgotPasswordScreen extends GetView<AuthController> {
           Center(
             child: AuthPrimaryButton(
               label: AppStrings.btnContinue,
-            onTap: controller.sendPasswordReset,
+              onTap: controller.sendPasswordReset,
               width: 160.w,
             ),
           ),

@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:powerfitness/model/onboarding_slide_model.dart';
-import 'package:powerfitness/resource/app_string.dart';
+import 'package:powerfitness/models/onboarding_slide_model.dart';
 import 'package:powerfitness/resource/app_images.dart';
+import 'package:powerfitness/resource/app_string.dart';
 import 'package:powerfitness/routes/app_routes.dart';
 
 class OnboardingController extends GetxController {

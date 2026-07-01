@@ -6,4 +6,5 @@ class AppRoutes {
   static const forgotPassword = '/forgot-password';
   static const setPassword = '/set-password';
   static const fingerprint = '/fingerprint';
+  static const home = '/home';
 }

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:powerfitness/controller/auth_controller.dart';
-import 'package:powerfitness/controller/onboarding_controller.dart';
-import 'package:powerfitness/controller/splash_controller.dart';
+import 'package:powerfitness/controllers/auth_controller.dart';
+import 'package:powerfitness/controllers/onboarding_controller.dart';
+import 'package:powerfitness/controllers/splash_controller.dart';
 
 class AppBinding extends Bindings {
   @override

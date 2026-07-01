@@ -5,6 +5,7 @@ import 'package:powerfitness/view/auth/forgot_password_view.dart';
 import 'package:powerfitness/view/auth/login_view.dart';
 import 'package:powerfitness/view/auth/set_password_view.dart';
 import 'package:powerfitness/view/auth/signup_view.dart';
+import 'package:powerfitness/view/home_view.dart';
 import 'package:powerfitness/view/onboarding_a1_view.dart';
 import 'package:powerfitness/view/splash_view.dart';
 
@@ -44,6 +45,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.fingerprint,
       page: () => const FingerprintScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: AppRoutes.home,
+      page: () => const HomeScreen(),
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
