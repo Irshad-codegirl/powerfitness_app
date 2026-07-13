@@ -47,7 +47,7 @@ class AppStrings {
   static const String hintEmailOrPhone = '+123 567 89000';
   static const String labelConfirmPassword = 'Confirm Password';
   static const String termsPrefix = 'By continuing, you agree to';
-  static const String termsLink = 'Terms of Use and Privacy Policy.';
+  static const String termsLink = 'Terms of Use and Privacy Policy.';   
   static const String btnSignUp = 'Sign Up';
   static const String orSignupWith = 'or sign up with';
   static const String alreadyAccount = 'Already have an account? ';
